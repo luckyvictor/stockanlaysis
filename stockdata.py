@@ -1,3 +1,10 @@
+import urllib
+import urllib2
+import requests
+import json
+
+import pyexcel_xls
+#https://automatetheboringstuff.com/chapter12/
 import ystockquote 
 
 '''
@@ -95,3 +102,14 @@ sample usage:
 >>> print ystockquote.get_price('GOOG')
 529.46
 '''
+
+url = 'http://www.londonstockexchange.com/statistics/companies-and-issuers/list-of-all-companies.xls'
+
+request = requests.get(url)
+#with open("code3.zip", "wb") as code:
+#    code.write(r.content)
+with open('stocklist.xls") as stocktable:
+  stocktable.write(request.content)
+  
+data = get_data("list-of-all-companies.xls")
+print(json.dumps(data))
