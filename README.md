@@ -1,0 +1,3 @@
+# stockanlaysis
+
+First draft
